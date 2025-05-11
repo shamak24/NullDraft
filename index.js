@@ -1,9 +1,16 @@
 import express from 'express';
 import blogs from './Posts.js';
+import bodyParser from 'body-parser';
 
 const app = express();
 const port = 3000;
+
+//MIDDLEWARE FOR EJS
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 app.use(express.static('public'));
+
 
 app.get('/', (req,res)=>{
     res.render('index.ejs');
@@ -31,25 +38,17 @@ app.get('/posts/:id', (req,res)=>{
     }
 })
 
+app.post('/submit', (req,res)=>{
+    const date = new Date().toLocaleString();
+    const { title, description, author, content } = req.body;
+    console.log('Form Data:', { author, title, date, description, content });
+})
+
+
+
 app.use((req, res) => {
     res.status(404).render('404.ejs');
 });
-
-// app.post('/newpost/submit', (req,res)=>{
-//     const date = new Date().toLocaleString('en-US');
-//     const { title, description, image, author, content } = req.body;
-//     const newPost = {
-//         id: blogs.length + 1,
-//         title,
-//         date,
-//         description,
-//         image,
-//         author,
-//         content
-//     };
-//     blogs.push(newPost);
-//     res.redirect('/posts');
-// })
 
 app.listen(port, ()=>{
     console.log(`Server is running on http://localhost:${port}`);

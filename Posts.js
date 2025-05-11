@@ -47,6 +47,6 @@ const blogs = [
         description: "A beginner's guide to GraphQL, a query language for APIs that allows clients to request only the data they need.",
         content: "GraphQL is a powerful alternative to REST for building APIs. It allows clients to request only the data they need, reducing over-fetching and under-fetching of data. In this article, we will cover the basics of GraphQL, how to set up a GraphQL server, and how to query data using GraphQL.",
     },
-];
+]
 
 export default blogs;
