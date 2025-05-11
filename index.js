@@ -19,6 +19,18 @@ app.get('/posts', (req,res) => {
     });
 })
 
+app.get('/posts/:id', (req,res)=>{
+    const postId = req.params.id;
+    const post = blogs.find((blog) => blog.id == postId);
+    if (post) {
+        res.render('post.ejs', {
+            post: post
+        });
+    } else {
+        res.status(404).render('404.ejs');
+    }
+})
+
 app.use((req, res) => {
     res.status(404).render('404.ejs');
 });
