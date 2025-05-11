@@ -2,14 +2,26 @@
 
 <div class="container mx-auto my-16 p-4 flex flex-col items-center justify-center text-white">
     <h1 class="text-4xl font-bold mb-4">Create a New Post</h1>
-    <form action="/newpost" method="POST" class="w-full max-w-lg">
+    <form action="/newpost/submit" method="POST" class="w-full max-w-lg">
         <div class="mb-4">
-            <label for="title" class="block text-gray-200 text-sm font-bold mb-2">Title:</label>
-            <input type="text" id="title" name="title" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline bg-gray-800">
+            <label for="title" class="block text-gray-200 text-sm font-bold mb-2 text-align-left">Author    <span class="font-extrabold text-xl">*</span></label>
+            <input type="text" id="title" name="title" placeholder="Author's name" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline ">
         </div>
         <div class="mb-4">
-            <label for="content" class="block text-gray-200 text-sm font-bold mb-2">Content:</label>
-            <textarea id="content" name="content" required rows="10" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline bg-gray-800"></textarea>
+            <label for="title" class="block text-gray-200 text-sm font-bold mb-2">Title    <span class="font-extrabold text-xl">*</span></label>
+            <input type="text" id="title" name="title" placeholder="Title of the blog" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline ">
+        </div>
+        <div class="mb-4">
+            <label for="content" class="block text-gray-200 text-sm font-bold mb-2">Description    <span class="font-extrabold text-xl">*</span></label>
+            <textarea id="content" autocapitalize="sentences" placeholder="Brief description of blog" name="content" required rows="2" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+        </div>
+        <div class="mb-4">
+            <label for="content" class="block text-gray-200 text-sm font-bold mb-2">Content    <span class="font-extrabold text-xl">*</span></label>
+            <textarea id="content" autocapitalize="sentences" placeholder="Content of the blog" name="content" required rows="10" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+        </div>
+        <div class="mb-4">
+            <label for="title" class="block text-gray-200 text-sm font-bold mb-2">Image URL    <span class="font-extrabold text-xl">*</span></label>
+            <input type="text" id="title" name="title" placeholder="Provide the image URL" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline ">
         </div>
         <button type="submit" class="bg-purple-700 hover:bg-purple-900 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">Submit</button>
     </form>

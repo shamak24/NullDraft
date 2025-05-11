@@ -1,4 +1,15 @@
 <%- include("partials/header.ejs")  %>
 
+<div class="container mx-auto mt-16 p-4 flex flex-col items-center justify-center">
+    <h1 class="text-2xl font-bold">All Posts</h1>
+    <div class="w-full max-w-2xl mt-8 rounded-lg">
+        <% posts.forEach(post => { %>
+            <div class="bg-gray-700 p-4 mb-4 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold"><%= post.title %></h2>
+                <p class="text-gray-400"><%= post.content %></p>
+                <strong class="text-purple-500 text-sm">Posted By: <%= post.author %></strong>
+            </div>
+        <% }) %>
+</div>
 
 <%- include("partials/footer.ejs")  %>
