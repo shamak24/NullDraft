@@ -4,12 +4,18 @@
     <h1 class="text-2xl font-bold">All Posts</h1>
     <div class="w-full max-w-2xl mt-8 rounded-lg">
         <% posts.forEach(post => { %>
-            <div class="bg-gray-700 p-4 mb-4 rounded-lg shadow-md">
-                <h2 class="text-xl font-bold"><%= post.title %></h2>
-                <p class="text-gray-400"><%= post.content %></p>
-                <strong class="text-purple-500 text-sm">Posted By: <%= post.author %></strong>
+            <div class="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 p-6 mb-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                <h2 class="text-2xl font-extrabold text-white mb-2"><%= post.title %></h2>
+                <p class="text-gray-300 mb-4 leading-relaxed"><%= post.content %></p>
+                <div class="flex items-center justify-between">
+                    <strong class="text-purple-400 text-sm">Posted By: <%= post.author %></strong>
+                    <p class="text-white px-4 py-2 text-sm">
+                        <%= post.date %>
+                    </p>
+                </div>
             </div>
         <% }) %>
+    </div>
 </div>
 
 <%- include("partials/footer.ejs")  %>

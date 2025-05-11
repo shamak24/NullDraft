@@ -2,7 +2,6 @@ body{
     background: #000000; /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #000000, #434343); /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #000000, #434343);
-    color: #ffffff;
     font-family: 'Courier New', Courier, monospace;
     line-height: 1.5;
     margin: 0;
