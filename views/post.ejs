@@ -4,7 +4,10 @@
     
     <div class="w-full max-w-4xl mt-8 rounded-lg">
         <div class="card px-5 pb-6 pt-3 mb-6 rounded-lg shadow-lg">
-            <a href="/posts"><img src="/images/back.png" alt="back"></a>
+            <a href="/posts" class="flex items-center mb-4">
+                    <img src="/images/back.png" alt="back" class="mr-2">
+                    <span class="text-purple-400 text-sm font-bold mt-1">Back</span>
+            </a>
             <h1 class="text-3xl max-md:text-2xl font-extrabold mb-4"><%= post.title %></h1>
             <strong class="text-xl font-bold mb-7">Author: <%= post.author %></strong>
             <p class="text-gray-300 mb-4 leading-relaxed mb-2"><%= post.description %></p>
