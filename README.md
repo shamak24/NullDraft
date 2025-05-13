@@ -39,7 +39,7 @@ NullDraft is a minimalist, file-based blog platform built using Node.js and Expr
 ## 📦 Installation & Running Locally
 
 ```bash
-git clone https://github.com/shamak24/nulldraft.git
+git clone https://github.com/shamak24/NullDraft.git
 
 npm install
 node index.js
