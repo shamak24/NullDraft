@@ -43,3 +43,8 @@ git clone https://github.com/shamak24/NullDraft.git
 
 npm install
 node index.js
+```
+---
+
+<p align="center">Made with ❤️ by Soumil Shamak 😎</p>
+
