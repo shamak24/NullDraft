@@ -2,15 +2,21 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import fs from 'fs';
 import path from 'path';
+import mongoose from 'mongoose';
 import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 
 const app = express();
 const port = 3000;
-
+const dbURL = process.env.DB_URL;
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const postsPath = path.join(__dirname, 'Posts.json');
 
 //MIDDLEWARE FOR EJS
+app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
@@ -67,12 +73,17 @@ app.post('/submit', (req,res)=>{
     });
 })
 
-
-
 app.use((req, res) => {
     res.status(404).render('404.ejs');
 });
 
-app.listen(port, ()=>{
+mongoose.connect(dbURL)
+.then(() => {
+    console.log('Connected to the database');
+    app.listen(port, ()=>{
     console.log(`Server is running on http://localhost:${port}`);
 })
+})
+.catch((err) => {
+    console.error('Server failed:', err);
+});
